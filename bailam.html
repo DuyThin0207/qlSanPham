@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<input type="text" id="create">
+<button onclick="create()">Tạo mới</button>
+<br>
+<table border="1">
+    <tr>
+        <th>Tên</th>
+        <th colspan="2">Sửa/Xóa</th>
+    </tr>
+    <tbody id="products">
+
+    </tbody>
+</table>
+
+<script>
+    let products = ['THC', 'MDMA', 'LSD']
+
+    function showAll() {
+
+        let str = '';
+        for (let i = 0; i < products.length; i++) {
+            str += `<tr>
+               <td> ${products[i]} </td>
+               <td><button>Sửa</button></td>
+              <td><button>Xóa</button></td>
+          </tr>`
+
+        }
+        document.getElementById("products").innerHTML = str;
+    }
+    showAll();
+    function create() {
+        let product = document.getElementById("create").value
+        products.push(product);
+        showAll();
+    }
+
+    function remove(){
+        
+    }
+</script>
+</body>
+</html>
